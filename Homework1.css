@@ -1,0 +1,278 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Divide the space into three columns */
+    grid-gap: 20px; /* Ajoutez un espacement entre les deux colonnes */
+}
+
+
+
+/* Reset some default styles for list items and links */
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Apply basic styling to navigation links */
+.navigation ul {
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navigation ul li {
+    margin: 0;
+    padding: 10px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Style the gallery of pictures */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    flex: 0 0 calc(33.3333% - 20px); /* Adjust the width as needed */
+    margin: 10px;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 100px 0;
+    background-image: url("https://statics-infoconcert.digitick.com/media/a_effacer/the-king-gizzard_visunews1022.jpg");
+    background-size: cover;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the navigation bar */
+.navigation {
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.navigation ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Style the main content area */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the sidebar profile card */
+.sidebar {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+    grid-column: 1; /* Le sidebar occupe la première colonne */
+}
+
+.profile img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.profile h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.profile p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Style the ads section */
+
+.ads {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+}
+
+
+.ads img {
+    max-width: 40%; /* La largeur de l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* La hauteur est ajustée automatiquement pour maintenir les proportions originales */
+    display: block; /* Supprime l'espace réservé sous l'image */
+    margin: 0 auto; /* Centre l'image horizontalement dans le conteneur */
+    margin-bottom: 10px; /* Ajoute un espace entre les images */
+}
+
+.ads p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style the footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+.logo_insta, .logo_twitter{
+    width : 10%;
+    height: auto;
+}
+
+.flying, .im{
+    width : 20%;
+    height: auto;
+}
+
+.gallery-item .circle {
+    max-width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Ajoutez cette propriété pour rendre l'image circulaire */
+    overflow: hidden; /* Cachez les parties de l'image qui dépassent du cercle */
+}
+
+.gallery-item .fixed-size {
+    max-width: 150px; /* Spécifiez la largeur fixe souhaitée en pixels */
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Default styles for larger screens */
+
+/* Media query for screens up to 768px (mobile view) */
+@media (max-width: 768px) {
+    .container {
+        display: block; /* Change to a block layout for mobile */
+    }
+
+    /* Reorder elements for mobile view */
+    .main-content {
+        order: 2; /* Move main content below navigation */
+    }
+
+    .sidebar {
+        order: 3; /* Move sidebar below main content */
+        
+    }
+
+    .ads {
+        order: 4; /* Move ads below sidebar */
+    }
+}
+
+/* Media query for screens between 769px and 1024px (tablet view) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        display: grid; /* Use grid layout for tablets */
+        grid-template-columns: 1fr 2fr; /* Two columns for sidebar and main content */
+        grid-template-areas: "header header" "nav nav" "sidebar main" "ads footer"; /* Define grid areas */
+    }
+
+    /* Set grid areas for individual sections */
+    header {
+        grid-area: header;
+    }
+
+    .navigation {
+        grid-area: nav;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+
+    .main-content {
+        grid-area: main;
+    }
+
+    .ads {
+        grid-area: ads;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
